@@ -32,7 +32,7 @@ class App extends React.Component {
     let response;
     try {
       response = await axios.post(
-        "http://localhost:3000/graphql",
+        "https://myeventbookingapp.herokuapp.com/graphql",
         requestBody,
         {
           headers: {

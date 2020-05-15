@@ -37,7 +37,7 @@ class Bookings extends Component {
     };
 
     const response = await axios.post(
-      "http://localhost:3000/graphql",
+      "https://myeventbookingapp.herokuapp.com/graphql",
       requestBody,
       {
         headers: {
