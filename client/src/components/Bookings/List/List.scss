@@ -1,0 +1,79 @@
+.bookings-list {
+  width: 40rem;
+  max-width: 90%;
+  margin: 2rem auto;
+  list-style: none;
+  padding: 0;
+
+  .item {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #173e43;
+    display: block;
+
+    .controlDiv {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+    .actions {
+      display: flex;
+      align-content: center;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      > button {
+        background: #173e43;
+        font: inherit;
+        border: 1px solid #173e43;
+        border-radius: 3px;
+        padding: 0.15rem 0.6rem;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+        color: white;
+        cursor: pointer;
+        font-size: 25px;
+        margin: 0;
+
+        &:hover,
+        &:active {
+          background: #22535a;
+          border-color: #22535a;
+        }
+      }
+    }
+  }
+  .active {
+    height: auto;
+
+    > div {
+      border: 1px solid #173e43;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      display: block;
+
+      > h3 {
+        display: flex;
+        justify-content: space-between;
+
+        > p > b {
+          font-size: 1.22rem !important;
+          color: rgb(58, 57, 57);
+        }
+      }
+    }
+
+    .hr {
+      width: 75%;
+      border-top: 1px solid rgb(197, 196, 196);
+      margin: 10px;
+    }
+  }
+  .inactive {
+    height: 0;
+
+    > div {
+      display: none !important;
+    }
+  }
+}

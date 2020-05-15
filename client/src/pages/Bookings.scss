@@ -1,0 +1,31 @@
+.controlButton {
+  text-align: center;
+  padding: 0.5rem;
+
+  > button {
+    font: inherit;
+    border: none;
+    background: transparent;
+    color: black;
+    padding: 0.25rem 3rem;
+    margin: auto 0.25rem;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+
+    &:active {
+      border-bottom-color: #22535a;
+      color: #22535a;
+    }
+    &:hover {
+      border-bottom-color: #22535a;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .active {
+    border-bottom-color: #22535a;
+    color: #22535a;
+  }
+}

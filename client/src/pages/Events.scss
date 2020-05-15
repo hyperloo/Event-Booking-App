@@ -1,0 +1,75 @@
+.events-control {
+  text-align: center;
+  border: 1px solid #173e43;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 30rem;
+  max-width: 80%;
+  background-color: white;
+
+  button {
+    background: #173e43;
+    font: inherit;
+    border: 1px solid #173e43;
+    border-radius: 3px;
+    padding: 0.25rem 1rem;
+    margin-right: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+    color: white;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      background: #22535a;
+      border-color: #22535a;
+    }
+  }
+}
+
+.form-control {
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+
+  label,
+  input,
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 33px;
+    // margin: auto 15px;
+  }
+  input {
+    height: 40px;
+    border-radius: 15px;
+    box-shadow: none;
+    border: none;
+    background: #e4e4e4;
+    opacity: 0.63;
+    padding: 3px 20px;
+  }
+  textarea {
+    border-radius: 15px;
+    box-shadow: none;
+    border: none;
+    background: #e4e4e4;
+    opacity: 0.63;
+    padding: 3px 20px;
+  }
+}
+
+#datetime {
+  .date {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    > input {
+      width: 48%;
+    }
+  }
+}

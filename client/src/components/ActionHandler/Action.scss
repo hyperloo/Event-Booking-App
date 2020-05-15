@@ -1,0 +1,18 @@
+.errorBox {
+  box-sizing: border-box;
+  position: relative;
+  top: 0px;
+  margin: 1.2rem auto;
+  border-radius: 20px;
+  padding: 1rem 3rem;
+  width: 40rem;
+  max-width: 100%;
+  z-index: -1;
+
+  > p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 1px 4px #000000e3;
+  }
+}

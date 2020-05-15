@@ -1,0 +1,39 @@
+/************************************************** GraphQL **********************************************************************************/
+
+- This ...event._doc just filters the input data and removes extra metaData and return only the core/useful data, _id: event._doc._id.toString(), override _id in
+  the ...event._doc operator and changes the datatype of returned 'date' from date(returned from mongo) date String as GraphQL do not have 'Date' datatype.
+- GraphQL do not have a ObjectId Datatype of mongoDB and thus we convert this _id to String when we return it in the query.
+- Datatype! -> '!' denotes the required 
+- We use password: String and do not use '!' as we do not want to get password back in the response from database.
+
+- Another Syntax by declaring mutation/query type and passing arguments which are variables with '$' (like $bid) with their datatype (like ID!) and we can use the
+  assigned variable in query without using quotes ' " " ' and then pass second property to request body as variables : {variable (same name as in argument without '$') : value}
+
+
+/*************************************************** Mongo / Mongoose ************************************************************************/
+-  ...event._doc ->  filters and removes metadata from returned response from the DB and only give backs core/useful data.
+-  _id: ...event._doc._id.toString() converts _id datatype to String datatype
+-  Above step can  be also done using _id = event.id
+
+
+/*********************************** Random ***************************/
+
+- The cookies and web-tokens (authorization credentials) are stored in 'Authorization' name header which is send to the server in a req and can be accessed using
+    . req.get('Authorization')
+    . req.header.Authorization
+
+- Basic structure of 'Authorization' Header is <type> <credentials>. The credentials are of use, as they contain token/cookies. This can be don using 
+        const token = req.get('Authorization').split(' ')[1]; to split the header into 2 parts of an array and get the second part.
+
+- Cross Origin Requests Handling (CORs)
+  . We can simply use 'cors' (middleware) 'OR'
+  . This alternative middleware
+    app.use((req,res,next) => {
+      res.setHeader('Access-Control-Allow-Origin','*');     //Allow all origin requests
+      res.setHeader('Access-Control-Allow-Methods','POST,GET,OPTIONS');   //Allow POST,GET, OPTIONS(this automatically attaches itself with the first ones) requests
+      res.setHeader('Access-Control-Allow-Headers','Content-Type, Authorization'); //Allow Content-Type and Authorization Headers
+      if(req.method() === 'OPTIONS'){
+        return res.sendStatus(200);
+      }
+      next();
+    })
