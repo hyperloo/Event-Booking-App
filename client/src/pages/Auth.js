@@ -112,46 +112,53 @@ class Auth extends Component {
 
   render() {
     return (
-      <form className="auth-form" onSubmit={this.submitHandler}>
-        {this.context.errors && (
-          <Error status={this.context.status} error={this.context.errors} />
-        )}
-        <div className="form-control">
-          <label htmlFor="email">E-Mail</label>
-          <input
-            type="email"
-            if="email"
-            ref={this.emailEl}
-            onChange={() => {
-              this.context.errors = null;
-              this.setState({ stat: false });
-            }}
-          />
+      <React.Fragment>
+        <div className="heading">
+          <h2>Welcome</h2>
+          <h1>The Event Booking App</h1>
+          <h3>Built Using Graphql and MERN Stack</h3>
         </div>
-        <div className="form-control">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            if="password"
-            ref={this.passwordEl}
-            onChange={() => {
-              this.context.errors = null;
-              this.setState({ stat: false });
-            }}
-          />
-        </div>
-        <div className="form-actions">
-          <button type="submit">
-            {this.state.isLogin ? "Login" : "SignUp"}{" "}
-            {this.state.isLoading && (
-              <i className="fa fa-circle-o-notch fa-spin"></i>
-            )}
-          </button>
-          <button type="button" onClick={this.switchHandler}>
-            Switch to {this.state.isLogin ? "SignUp" : "Login"}
-          </button>
-        </div>
-      </form>
+        <form className="auth-form" onSubmit={this.submitHandler}>
+          {this.context.errors && (
+            <Error status={this.context.status} error={this.context.errors} />
+          )}
+          <div className="form-control">
+            <label htmlFor="email">E-Mail</label>
+            <input
+              type="email"
+              if="email"
+              ref={this.emailEl}
+              onChange={() => {
+                this.context.errors = null;
+                this.setState({ stat: false });
+              }}
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              if="password"
+              ref={this.passwordEl}
+              onChange={() => {
+                this.context.errors = null;
+                this.setState({ stat: false });
+              }}
+            />
+          </div>
+          <div className="form-actions">
+            <button type="submit">
+              {this.state.isLogin ? "Login" : "SignUp"}{" "}
+              {this.state.isLoading && (
+                <i className="fa fa-circle-o-notch fa-spin"></i>
+              )}
+            </button>
+            <button type="button" onClick={this.switchHandler}>
+              Switch to {this.state.isLogin ? "SignUp" : "Login"}
+            </button>
+          </div>
+        </form>
+      </React.Fragment>
     );
   }
 }
